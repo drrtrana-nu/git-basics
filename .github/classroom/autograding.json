@@ -1,7 +1,7 @@
 {
   "tests": [
       {
-        "name": "Test",
+        "name": "tests",
         "setup": "",
         "run": "pytest",
         "input": "",
