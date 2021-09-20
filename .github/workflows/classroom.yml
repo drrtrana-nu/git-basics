@@ -2,24 +2,18 @@ name: GitHub Classroom Workflow
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
     name: Autograding
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/labeler@v2
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
       - uses: actions/checkout@v2
-      - name: Set up Python 3.8.5
+      - name: Set up Python 3.8.0
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8.5
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pytest
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          # Semantic version range syntax or exact version of a Python version
+          python-version: '3.8.0'
       - uses: education/autograding@v1
+
